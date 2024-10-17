@@ -7,3 +7,4 @@ public interface ViewsRepository {
 
     void addView(String usuario, LocalDateTime viewTime, int edad);
 }
+
