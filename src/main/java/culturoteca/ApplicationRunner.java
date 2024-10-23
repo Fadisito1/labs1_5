@@ -1,4 +1,4 @@
-package artifactId;
+package culturoteca;
 
 public class ApplicationRunner {
 }

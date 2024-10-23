@@ -1,4 +1,4 @@
-package artifactId.exceptions;
+package culturoteca.exceptions;
 
 public class VideoNotFoundException extends viewsExceptions {
   public VideoNotFoundException(String message) {

@@ -1,4 +1,4 @@
-package artifactId.exceptions;
+package culturoteca.exceptions;
 
 
 public class DuracionNotValidException extends viewsExceptions {

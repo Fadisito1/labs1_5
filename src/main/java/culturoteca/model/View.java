@@ -1,8 +1,8 @@
-package artifactId.model;
+package culturoteca.model;
 
 import java.time.LocalDateTime;
 
-public record views(
+public record View(
         String usuario,
         LocalDateTime viewTime,
         int edad
