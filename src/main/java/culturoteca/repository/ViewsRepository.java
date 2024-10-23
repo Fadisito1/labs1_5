@@ -1,6 +1,6 @@
-package artifactId.repository;
+package culturoteca.repository;
 
-import artifactId.model.views;
+import culturoteca.model.View;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -8,6 +8,8 @@ public interface ViewsRepository {
 
     void addView(String usuario, LocalDateTime viewTime, int edad);
 
-    List<views> findByVideoCodigo(String videoCodigo);
+    List<View> findByVideoCodigo(String videoCodigo);
+
+    View save(View view);
 }
 
