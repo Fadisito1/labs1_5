@@ -16,7 +16,6 @@ public interface VideoRepository {
 
     List<Video> findByTitle(String title);
 
-    List<Video> listarVideos();
 
 
 }

@@ -19,4 +19,5 @@ public abstract class ViewsRepositoryImpl implements ViewsRepository {
         this.views.add( view );
         return view;
     }
+
 }
