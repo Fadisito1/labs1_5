@@ -2,6 +2,7 @@ package culturoteca.repository.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import culturoteca.exceptions.VideoNotFoundException;
 import culturoteca.model.Video;
 import culturoteca.repository.VideoRepository;
 
@@ -15,6 +16,9 @@ public class VideoRepositoryImpl implements VideoRepository {
 
     @Override
     public List<Video> findAll() {
+        if (videos.isEmpty()) {
+            throw new VideoNotFoundException("No se encontraron videos.");
+        }
         return videos;
     }
 
@@ -30,7 +34,7 @@ public class VideoRepositoryImpl implements VideoRepository {
         for ( Video video : videos ) {
             if(video.titulo().contains( title )){
                 if(filteredVideos == null){
-                    filteredVideos = new ArrayList<Video>();
+                    filteredVideos = new ArrayList<>();
                 }
                 filteredVideos.add(video);
             }
@@ -66,12 +70,5 @@ public class VideoRepositoryImpl implements VideoRepository {
         }
         return matchedVideos;
     }
-
-    @Override
-    public List<Video> listarVideos() {
-        return List.of();
-    }
-
-
 
 }
