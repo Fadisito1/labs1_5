@@ -13,11 +13,10 @@ public interface VideoRepository {
 
     List<Video> find(Double fromDuration, Double toDuration);
 
+
+    List<Video> findByTitle(String title);
+
     List<Video> listarVideos();
 
-    void agregarVideo(String codigo, String titulo, String descripcion, double duracion);
 
-    List<Video> buscarPorTitulo(String titulo);
-
-    List<Video> buscarPorDuracion(double duracion);
 }

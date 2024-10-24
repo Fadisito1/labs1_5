@@ -28,7 +28,7 @@ public class VideoRepositoryImpl implements VideoRepository {
     public List<Video> find(String title) {
         List<Video> filteredVideos = null;
         for ( Video video : videos ) {
-            if(title.equals( video.titulo() )){
+            if(video.titulo().contains( title )){
                 if(filteredVideos == null){
                     filteredVideos = new ArrayList<Video>();
                 }
@@ -40,13 +40,31 @@ public class VideoRepositoryImpl implements VideoRepository {
 
     @Override
     public List<Video> find(Double fromDuration, Double toDuration) {
-        List<Video> filteredVideos = new ArrayList<Video>();
-        for ( Video video : videos ) {
-            if(video.duracion()> fromDuration && video.duracion()< toDuration){
+        List<Video> filteredVideos = new ArrayList<>();
+        for (Video video : videos) {
+            if (video.duracion() >= fromDuration && video.duracion() <= toDuration) {
                 filteredVideos.add(video);
             }
         }
+
+        if (filteredVideos.isEmpty()) {
+            System.out.println("No se encontraron videos en el rango de duración solicitado.");
+        }
+
         return filteredVideos;
+    }
+    @Override
+    public List<Video> findByTitle(String title) {
+        List<Video> matchedVideos = new ArrayList<>();
+        for (Video video : videos) {
+            if (video.titulo().equalsIgnoreCase(title)) {
+                matchedVideos.add(video);
+            }
+        }
+        if (matchedVideos.isEmpty()) {
+            System.out.println("El video solicitado no se encuentra.");
+        }
+        return matchedVideos;
     }
 
     @Override
@@ -54,20 +72,6 @@ public class VideoRepositoryImpl implements VideoRepository {
         return List.of();
     }
 
-    @Override
-    public void agregarVideo(String codigo, String titulo, String descripcion, double duracion) {
-
-    }
-
-    @Override
-    public List<Video> buscarPorTitulo(String titulo) {
-        return List.of();
-    }
-
-    @Override
-    public List<Video> buscarPorDuracion(double duracion) {
-        return List.of();
-    }
 
 
 }
