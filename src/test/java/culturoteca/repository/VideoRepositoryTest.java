@@ -16,16 +16,14 @@ import static org.mockito.Mockito.*;
 class VideoRepositoryTest {
 
     private VideoRepository videoRepository;
-    private Video video1;
     private Video video2;
-    private Video video3;
 
     @BeforeEach
     void init() {
         videoRepository = mock(VideoRepository.class);
-        video1 = new Video("01", "Título 1", "----", 4.5);
+        Video video1 = new Video("01", "Título 1", "----", 4.5);
         video2 = new Video("02", "Título 2", "----", 5.5);
-        video3 = new Video("03", "Clic 3", "----", 4.4);
+        Video video3 = new Video("03", "Clic 3", "----", 4.4);
 
         List<Video> videos = new ArrayList<>();
         videos.add(video1);

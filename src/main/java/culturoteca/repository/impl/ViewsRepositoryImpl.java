@@ -1,17 +1,30 @@
 package culturoteca.repository.impl;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 import culturoteca.model.View;
 import culturoteca.repository.ViewsRepository;
+import org.springframework.stereotype.Component;
 
-public abstract class ViewsRepositoryImpl implements ViewsRepository {
+@Component
+public class ViewsRepositoryImpl implements ViewsRepository {
 
     private final List<View> views;
 
     public ViewsRepositoryImpl() {
         this.views = new ArrayList<>();
+    }
+
+    @Override
+    public void addView(String usuario, LocalDateTime viewTime, int edad) {
+
+    }
+
+    @Override
+    public List<View> findByVideoCodigo(String videoCodigo) {
+        return List.of();
     }
 
     @Override

@@ -15,7 +15,4 @@ public interface VideoRepository {
 
 
     List<Video> findByTitle(String title);
-
-
-
 }

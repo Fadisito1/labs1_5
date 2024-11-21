@@ -7,5 +7,5 @@ import culturoteca.exceptions.VideoNotFoundException;
 public interface CultureMediaService {
     List<Video> findAll() throws VideoNotFoundException;
 
-    List<Video> findByTitle(String title);
+    List<Video> findByTitle(String title) throws VideoNotFoundException;
 }
