@@ -12,6 +12,7 @@ public class CultureMediaServiceImpl implements CultureMediaService {
 
     private final VideoRepository videoRepository;
 
+
     public CultureMediaServiceImpl(VideoRepository videoRepository) {
         this.videoRepository = videoRepository;
     }
@@ -27,11 +28,16 @@ public class CultureMediaServiceImpl implements CultureMediaService {
 
     @Override
     public List<Video> findByTitle(String title) {
-
         List<Video> videos = videoRepository.findByTitle(title);
         if (videos.isEmpty()) {
             throw new VideoNotFoundException("No videos found with the title: " + title);
         }
         return videos;
+    }
+
+    @Override
+    public Video createVideo(Video video) {
+
+        return videoRepository.save(video);
     }
 }
