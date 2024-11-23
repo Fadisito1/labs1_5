@@ -8,7 +8,9 @@ import culturoteca.exceptions.TitleNotFoundException;
 import culturoteca.exceptions.VideoNotFoundException;
 import culturoteca.model.Video;
 import culturoteca.repository.VideoRepository;
+import org.springframework.stereotype.Component;
 
+@Component
 public class VideoRepositoryImpl implements VideoRepository {
 
     private final List<Video> videos;
